@@ -37,7 +37,7 @@
         <executions>
           <execution>
             <id>prepare</id>
-            <phase>pre-integration-test</phase>
+            <phase>prepare-package</phase>
             <configuration>
               <target>
                 <ant antfile="getjdk.xml" dir="." />

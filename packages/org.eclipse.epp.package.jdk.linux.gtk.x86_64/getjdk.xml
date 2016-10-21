@@ -19,6 +19,9 @@
     <arg value = "cp -r usr/lib/jvm/jre-1.8.0-openjdk-*/* jre/"/>
   </exec>
 
+  <chmod dir="jre/bin" perm="u+x"
+       includes="*"/>
+
 </target>
 </project>
 
