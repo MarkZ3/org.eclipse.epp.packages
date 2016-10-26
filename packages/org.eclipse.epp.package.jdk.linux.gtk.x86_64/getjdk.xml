@@ -1,22 +1,21 @@
 <project name="Extract Traces" default="main" >
 <target name="main">
 
-  <get ignoreerrors="false" maxtime="600" skipexisting="true" dest="target/headless.rpm" src="https://kojipkgs.fedoraproject.org//packages/java-1.8.0-openjdk/1.8.0.102/1.b14.fc25/x86_64/java-1.8.0-openjdk-headless-1.8.0.102-1.b14.fc25.x86_64.rpm" />
-
-  <get ignoreerrors="false" maxtime="600" skipexisting="true" dest="target/jre.rpm" src="https://kojipkgs.fedoraproject.org//packages/java-1.8.0-openjdk/1.8.0.102/1.b14.fc25/x86_64/java-1.8.0-openjdk-1.8.0.102-1.b14.fc25.x86_64.rpm" />
-
   <exec executable = "bash" failifexecutionfails="true" timeout="20000">
     <arg value = "-c"/>
-    <arg value = "rpm2cpio target/headless.rpm | cpio -i --make-directories"/>
-  </exec>
-  <exec executable = "bash" failifexecutionfails="true" timeout="20000">
-    <arg value = "-c"/>
-    <arg value = "rpm2cpio target/jre.rpm | cpio -i --make-directories"/>
+    <arg value = "mkdir target/jdk"/>
   </exec>
 
+  <get verbose="true" ignoreerrors="false" maxtime="600" skipexisting="true" dest="target/jdk/jdk.tar.gz" src="http://cdn.azul.com/zulu/bin/zulu8.17.0.3-jdk8.0.102-linux_x64.tar.gz" />
+
   <exec executable = "bash" failifexecutionfails="true" timeout="20000">
     <arg value = "-c"/>
-    <arg value = "cp -r usr/lib/jvm/jre-1.8.0-openjdk-*/* jre/"/>
+    <arg value = "tar xf target/jdk/jdk.tar.gz -C target/jdk"/>
+  </exec>
+
+  <exec executable = "bash" failifexecutionfails="true" timeout="20000">
+    <arg value = "-c"/>
+    <arg value = "cp -r target/jdk/zulu*/* jre/"/>
   </exec>
 
 </target>
