@@ -1,0 +1,4 @@
+- Don't use bash in getjdk.xml
+- Don't hardcode versions?
+- Add Windows build
+- Add 32 builds

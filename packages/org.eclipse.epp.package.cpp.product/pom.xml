@@ -98,6 +98,8 @@
                                 <echo message="Setting executable bits" />
                                 <chmod dir="target/products/epp.package.cpp/linux/gtk/x86_64/eclipse/features/org.eclipse.epp.package.jdk.linux.gtk.x86_64_4.7.0/jre/bin" perm="u+x"
                                    includes="*"/>
+                                <chmod dir="target/products/epp.package.cpp/macosx/cocoa/x86_64/Eclipse.app/Contents/Eclipse/features/org.eclipse.epp.package.jdk.cocoa.macosx.x86_64_4.7.0/jre/bin" perm="u+x"
+                                   includes="*"/>
                             </target>
                         </configuration>
                         <goals>

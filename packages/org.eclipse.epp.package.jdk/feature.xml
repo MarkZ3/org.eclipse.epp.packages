@@ -24,4 +24,12 @@
          ws="gtk"
          arch="x86_64"/>
 
+   <includes
+         id="org.eclipse.epp.package.jdk.cocoa.macosx.x86_64"
+         version="0.0.0"
+         optional="true"
+         os="macosx"
+         ws="cocoa"
+         arch="x86_64"/>
+
 </feature>

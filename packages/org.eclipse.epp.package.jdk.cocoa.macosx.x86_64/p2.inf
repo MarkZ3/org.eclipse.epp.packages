@@ -1,0 +1,4 @@
+instructions.configure=\
+org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:../Eclipse/features/org.eclipse.epp.package.jdk.cocoa.macosx.x86_64_4.7.0/jre/bin);
+instructions.unconfigure=\
+org.eclipse.equinox.p2.touchpoint.eclipse.setJvm(jvm:null);

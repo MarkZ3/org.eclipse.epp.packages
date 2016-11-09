@@ -49,6 +49,7 @@
         <module>packages/org.eclipse.epp.package.cpp.feature</module>
         <module>packages/org.eclipse.epp.package.jdk</module>
         <module>packages/org.eclipse.epp.package.jdk.linux.gtk.x86_64</module>
+        <module>packages/org.eclipse.epp.package.jdk.cocoa.macosx.x86_64</module>
         <module>packages/org.eclipse.epp.package.cpp.product</module>
       </modules>
     </profile>

@@ -6,11 +6,11 @@
     <arg value = "mkdir target/jdk"/>
   </exec>
 
-  <get ignoreerrors="false" maxtime="600" skipexisting="true" dest="target/jdk/jdk.tar.gz" src="http://cdn.azul.com/zulu/bin/zulu8.17.0.3-jdk8.0.102-linux_x64.tar.gz" />
+  <get ignoreerrors="false" maxtime="600" skipexisting="true" dest="target/jdk/jdk.zip" src="http://cdn.azul.com/zulu/bin/zulu8.17.0.3-jdk8.0.102-macosx_x64.zip" />
 
   <exec executable = "bash" failifexecutionfails="true" timeout="20000">
     <arg value = "-c"/>
-    <arg value = "tar xf target/jdk/jdk.tar.gz -C target/jdk"/>
+    <arg value = "unzip target/jdk/jdk.zip -d target/jdk"/>
   </exec>
 
   <exec executable = "bash" failifexecutionfails="true" timeout="20000">
