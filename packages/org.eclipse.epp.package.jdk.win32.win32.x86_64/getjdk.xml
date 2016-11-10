@@ -1,0 +1,23 @@
+<project name="Extract Traces" default="main" >
+<target name="main">
+
+  <exec executable = "bash" failifexecutionfails="true" timeout="20000">
+    <arg value = "-c"/>
+    <arg value = "mkdir target/jdk"/>
+  </exec>
+
+  <get ignoreerrors="false" maxtime="600" skipexisting="true" dest="target/jdk/jdk.zip" src="http://cdn.azul.com/zulu/bin/zulu8.17.0.3-jdk8.0.102-win_x64.zip" />
+
+  <exec executable = "bash" failifexecutionfails="true" timeout="20000">
+    <arg value = "-c"/>
+    <arg value = "unzip target/jdk/jdk.zip -d target/jdk"/>
+  </exec>
+
+  <exec executable = "bash" failifexecutionfails="true" timeout="20000">
+    <arg value = "-c"/>
+    <arg value = "cp -r target/jdk/zulu*/* jre/"/>
+  </exec>
+
+</target>
+</project>
+
